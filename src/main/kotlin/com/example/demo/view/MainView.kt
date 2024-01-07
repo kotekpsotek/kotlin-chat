@@ -2,6 +2,7 @@ package com.example.demo.view
 
 import com.example.demo.app.Styles
 import javafx.beans.property.SimpleListProperty
+import javafx.beans.property.SimpleObjectProperty
 import javafx.collections.FXCollections
 import javafx.geometry.Pos
 import tornadofx.*
@@ -10,6 +11,8 @@ class MessageAndAuthor(val authorId: String, val message: String);
 class ChatDescription(val name: String, val id: String, var messages: List<MessageAndAuthor>)
 
 class MainView : View("Kotekpsotek Chat") {
+    var displayChatContent = SimpleObjectProperty<ChatDescription?>(null);
+
     val messagesChannel = listOf(
         MessageAndAuthor(authorId = "1", message = "Txt1")
     );
@@ -21,7 +24,7 @@ class MainView : View("Kotekpsotek Chat") {
                 textFill = c("black")
             }
         }
-        label("Chats")
+
         vbox {
             // TODO: Download from websocket server
             if (chatList.size != 0) {
@@ -36,11 +39,12 @@ class MainView : View("Kotekpsotek Chat") {
 
                         style {
                             padding = box(5.px)
+                            fontFamily = "Inter; sans-serif"
                         }
 
-                        // User click on
+                        // Switch to chat
                         action {
-                            print("Register click on ${chat?.name}\n")
+                            displayChatContent.value = chat
                         }
                     }
                 }
