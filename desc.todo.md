@@ -1,9 +1,9 @@
-# **TODO LIST**
+# **TODO LIST******
 
 * Every point from below touches only application side doesn't touch a server side because it's seperate point
 
-1. Name: **Chat App**,
-2. Chats list: **Chat list**,
+<!-- 1. Name: **Chat App**, -->
+<!-- 2. Chats list: **Chat list**, -->
 3. Select one chat from existing,
 4. Join to a chat,
 5. Chat top-stripe with name and go-back action reflected inside,

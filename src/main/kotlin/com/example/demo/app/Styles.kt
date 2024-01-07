@@ -12,10 +12,15 @@ class Styles : Stylesheet() {
     }
 
     init {
-        label and heading {
+        label {
             padding = box(10.px)
             fontSize = 20.px
             fontWeight = FontWeight.BOLD
+        }
+
+        heading {
+            fontSize = 45.px
+            fontWeight = FontWeight.EXTRA_BOLD
         }
     }
 }
